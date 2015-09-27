@@ -1,0 +1,13 @@
+# Filesystem
+alias l="ls -lrt"
+alias la="ls -lart"
+alias cls="clear; l"
+
+alias ..="cd .."
+
+# GIT
+alias g="git"
+alias gg="clear; pwd; git status"
+
+# Programs
+alias google-chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
