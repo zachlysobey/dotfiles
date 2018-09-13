@@ -21,14 +21,13 @@ alias -- -="cd -"
 alias g="git"
 alias gg="clear; pwd; git status"
 alias ggg="g diff --cached"
-alias gdc="ggg"
 
 # Programs
-alias google-chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+# alias google-chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 # Show/hide hidden files in Finder
-alias showHiddenFiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hideHiddenFiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+# alias showHiddenFiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+# alias hideHiddenFiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
+# alias reload="exec $SHELL -l"
