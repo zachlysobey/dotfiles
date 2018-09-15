@@ -7,6 +7,9 @@ lg = log --pretty=oneline -n 20 --graph --abbrev-commit
 st = status -s
 d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 pu = push
+f = fetch
+r = rebase
+so = show
 fr = !"git fetch && git rebase"
 from = rebase origin/master
 mast = checkout master
