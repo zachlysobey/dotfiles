@@ -11,7 +11,7 @@ f = fetch
 r = rebase
 so = show
 fr = !"git fetch && git rebase"
-from = rebase origin/master
+from = !"git fetch && git rebase origin/master"
 mast = checkout master
 co = checkout
 cane = commit --amend --no-edit
@@ -20,3 +20,4 @@ undo = reset --soft head~
 
 [pager]
 log = false
+diff = false
