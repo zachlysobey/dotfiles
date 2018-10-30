@@ -1,11 +1,11 @@
+ALPHAPOINT="~/workspace/alphapoint"
+
 alias workspace="cd ~/workspace"
 alias work="workspace"
 
 alias ap="work && cd alphapoint"
 
-alias dal="ap && cd dnet-app-lvse"
-alias dap="ap && cd digitizer-apex"
-alias dig="ap && cd digitizer"
-alias jawa="ap && cd jawa"
-
-# alias apexRpc="ap && cd apex && cat **/**.cs | grep 'RPCMethodDesc(Name =' | awk '{print $3}' | sed s/\\"// | sed s/\\",// | sort | uniq"
+alias dal="cd $ALPHAPOINT/dnet-app-lvse"
+alias dap="cd $ALPHAPOINT/digitizer-apex"
+alias dig="cd $ALPHAPOINT/digitizer"
+alias sol="cd $ALPHAPOINT/alphapoint-solidity"
