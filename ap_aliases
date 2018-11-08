@@ -3,9 +3,9 @@ ALPHAPOINT="~/workspace/alphapoint"
 alias workspace="cd ~/workspace"
 alias work="workspace"
 
-alias ap="work && cd alphapoint"
-
+alias ap="cd $ALPHAPOINT"
 alias dal="cd $ALPHAPOINT/dnet-app-lvse"
-alias dap="cd $ALPHAPOINT/digitizer-apex"
 alias dig="cd $ALPHAPOINT/digitizer"
+alias dap="cd $ALPHAPOINT/digitizer-apex"
+alias dte="cd $ALPHAPOINT/digitizer-token-ethereum"
 alias sol="cd $ALPHAPOINT/alphapoint-solidity"
