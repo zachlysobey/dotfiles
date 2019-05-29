@@ -21,3 +21,7 @@ undo = reset --soft head~
 [pager]
 log = false
 diff = false
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color]
+	ui = true
