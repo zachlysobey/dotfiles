@@ -17,6 +17,8 @@ co = checkout
 cane = commit --amend --no-edit
 c = commit
 undo = reset --soft head~
+branches = branch --all --sort=-committerdate
+recent = for-each-ref --sort=-committerdate refs/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
 [pager]
 log = false
@@ -25,3 +27,7 @@ diff = false
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
+[pull]
+	rebase = true
+[commit]
+	verbose = true
