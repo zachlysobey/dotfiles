@@ -1,9 +1,12 @@
-ALPHAPOINT="~/workspace/alphapoint"
+WORKSPACE="$HOME/workspace"
+ALPHAPOINT="$WORKSPACE/alphapoint"
 
-alias workspace="cd ~/workspace"
-alias work="workspace"
+export PATH="$PATH:$WORKSPACE"
+
+alias work="cd $WORKSPACE"
 
 alias ap="cd $ALPHAPOINT"
+alias apex="cd $ALPHAPOINT/apex"
 alias dal="cd $ALPHAPOINT/dnet-app-lvse"
 alias psr="cd $ALPHAPOINT/PSRainier"
 alias dig="cd $ALPHAPOINT/digitizer"
@@ -14,3 +17,6 @@ alias dap="cd $ALPHAPOINT/digitizer-apex"
 alias dte="cd $ALPHAPOINT/digitizer-token-ethereum"
 alias sol="cd $ALPHAPOINT/alphapoint-solidity"
 alias tvm="cd $ALPHAPOINT/tvm-wallet"
+
+alias ap-db-up="apex; docker-compose up -d datamine; cd -"
+alias ap-db-down="apex && docker-compose down -v; cd -"

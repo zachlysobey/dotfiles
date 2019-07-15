@@ -12,17 +12,20 @@ r = rebase
 so = show
 fr = !"git fetch && git rebase"
 from = !"git fetch && git rebase origin/master"
+frod = !"git fetch && git rebase origin/development"
 mast = checkout master
+dev = checkout development
 co = checkout
 cane = commit --amend --no-edit
 c = commit
 undo = reset --soft head~
 branches = branch --all --sort=-committerdate
 recent = for-each-ref --sort=-committerdate refs/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 
 [pager]
-log = false
-diff = false
+	log = false
+	diff = false
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
