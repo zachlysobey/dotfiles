@@ -1,0 +1,17 @@
+function note {
+    fileName="note_$(date +%F).md"
+
+    echo $(date +%c) >> $fileName
+    echo "========================" >> $fileName
+    echo "" >> $fileName
+    echo "" >> $fileName
+
+    editor=${1:-"vi"}
+
+    case "$editor" in
+    "vi") editor_args="+$" ;;
+    *) editor_args="" ;;
+    esac
+
+    $editor $editor_args $fileName
+}
