@@ -6,3 +6,5 @@ alias notes="cd $NOTES && ls"
 
 alias n="notes && note; cd -"
 alias nc="notes && note code; cd -"
+
+alias post="personal_site_post"
