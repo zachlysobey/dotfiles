@@ -1,1 +1,5 @@
-alias work="cd ~/work"
+echo "work  -> $WORK"
+alias work="cd $WORK"
+
+echo "notes -> $NOTES"
+alias notes="cd $NOTES"
