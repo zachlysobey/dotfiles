@@ -1,0 +1,20 @@
+function personal_site_post {
+    personal_site_directory="$WORK/personal-site"
+
+    cd $personal_site_directory/src/pages
+
+    post_directory="$(date +%F)"
+    mkdir $post_directory
+    cd $post_directory
+
+    touch index.md
+
+    echo '---' >> index.md
+    echo "path: \"/$post_directory-post\"" >> index.md
+    echo "date: \"$post_directory\"" >> index.md
+    echo "title: \"\"" >> index.md
+    echo '---' >> index.md
+    echo '' >> index.md
+
+    code index.md
+}
