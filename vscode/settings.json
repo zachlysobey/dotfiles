@@ -1,0 +1,57 @@
+{
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Popping and Locking",
+    "editor.renderWhitespace": "boundary",
+    "breadcrumbs.enabled": true,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "workbench.sideBar.location": "right",
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.makeRoom",
+            "sequence": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.toggleActivityBarVisibility"
+            ]
+        }
+    ],
+    "workbench.activityBar.visible": true,
+    "solidity.packageDefaultDependenciesContractsDirectory": "",
+    "solidity.packageDefaultDependenciesDirectory": "node_modules",
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.enablePreview": false,
+    "gitlens.blame.separateLines": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.views.showRelativeDateMarkers": false,
+    "gitlens.views.lineHistory.enabled": false,
+    "gitlens.views.lineHistory.avatars": false,
+    "gitlens.views.fileHistory.enabled": false,
+    "gitlens.views.fileHistory.avatars": false,
+    "gitlens.views.compare.enabled": false,
+    "gitlens.views.compare.avatars": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.title": "${folderName}  > ${activeEditorShort}",
+    "theme-by-language.themes": {
+        "*": "Panda Syntax",
+        "markdown": "Visual Studio Dark"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.copyOnSelection": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    }
+}
