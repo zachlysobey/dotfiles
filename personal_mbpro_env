@@ -1,2 +1,7 @@
 WORK="$HOME/work"
 NOTES="$WORK/_writing"
+
+# For GO
+export GOPATH=$WORK/go
+
+MY_GO_CODE=$GOPATH/src/github.com/zachlysobey

@@ -1,8 +1,11 @@
-echo "work  -> $WORK"
+echo "work   -> $WORK"
 alias work="cd $WORK"
 
-echo "notes -> $NOTES"
+echo "notes  -> $NOTES"
 alias notes="cd $NOTES && ls"
+
+echo "gocode -> $MY_GO_CODE"
+alias gocode="cd $MY_GO_CODE && ls"
 
 alias n="notes && note; cd -"
 alias nc="notes && note code; cd -"
