@@ -11,3 +11,11 @@ I use homebrew to install some stuff.
 -   `brew install nvm`
 -   `brew install yarn`
 -   `brew install tree`
+
+### Aliasing stuff to the home directory
+
+Example:
+
+```sh
+ln -s /Users/zachlysobey/work/dotfiles/.npmrc ~/.npmrc
+```
