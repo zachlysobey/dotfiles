@@ -22,3 +22,24 @@ Example:
 ```sh
 ln -s /Users/zachlysobey/work/dotfiles/.npmrc ~/.npmrc
 ```
+
+### `oh-my-zsh`
+
+I use `zsh` with `oh-my-zsh` instead of bash
+
+> https://ohmyz.sh/
+
+#### .zshrc config
+
+I usually just `source` the relevant files from this repo in my `~/.zshrc`.
+
+### VSCode setup
+
+
+#### The `code` command
+
+https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
+
+#### other settings
+
+I have `vscode/settings.json` here, but its kinda specific to AP stuff. I'm keeping it for reference for now.
