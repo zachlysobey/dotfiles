@@ -1,0 +1,2 @@
+echo "work   -> $WORK"
+alias work="cd $WORK"
