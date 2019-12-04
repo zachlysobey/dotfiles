@@ -17,10 +17,11 @@ I use homebrew to install some stuff.
 
 ### Aliasing stuff to the home directory
 
-Example:
+Examples:
 
 ```sh
 ln -s /Users/zachlysobey/work/dotfiles/.npmrc ~/.npmrc
+ln -s /Users/zachlysobey/workspace/dotfiles/.gitconfig .gitconfig
 ```
 
 ### `oh-my-zsh`
