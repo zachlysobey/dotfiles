@@ -15,3 +15,15 @@ function note {
 
     $editor $editor_args $fileName
 }
+
+# function note {
+#   local today="$( date +"%Y-%m-%d" )"
+#   local now="$( date +"%Y-%m-%d-%H-%M-%S" )"
+#   local file="${today}.notes"
+#   echo "${now}" >> "${file}"
+#   if [ $# -eq 0 ] ; then
+#     "${EDITOR}" "${file}"
+#   else
+#     echo "$@" >> "${file}"
+#   fi
+# }
