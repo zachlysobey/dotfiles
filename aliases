@@ -33,3 +33,6 @@ alias c.="code ."
 
 # Reload the shell (i.e. invoke as a login shell)
 # alias reload="exec $SHELL -l"
+
+# K8s
+alias k=kubectl
