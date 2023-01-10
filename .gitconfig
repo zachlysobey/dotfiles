@@ -1,8 +1,9 @@
 [user]
 name = Zach Lysobey
-email = zlysobey@gmail.com 
+email = zlysobey@gmail.com
 
 [alias]
+l = log --format="%C(auto) %h %s" --reverse
 lg = log --pretty=oneline -n 20 --graph --abbrev-commit
 
 # aliases pulled from this SO post: https://stackoverflow.com/a/34467298/363701
