@@ -1,6 +1,0 @@
-alias work="cd $WORK"
-alias firepit="cd $WORK/firepit && gg"
-alias fp="firepit"
-alias dj="cd $WORK/dev-journal && note; cd -"
-alias charcoal="cd $WORK/squarespace-v6/site-server/src/test/charcoal"
-alias v6"cd $WORK/squarespace-v6"
