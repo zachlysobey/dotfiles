@@ -1,6 +1,6 @@
 [user]
 name = Zach Lysobey
-email = zlysobey@gmail.com
+email = zach@lysobey.com
 
 [alias]
 l = log --format="%C(auto) %h %s" --reverse
