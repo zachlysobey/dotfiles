@@ -1,1 +1,128 @@
-# currently no custom functions in use
+function gh-clone {
+    if [ -z "$1" ]; then
+        echo "Usage: gh-clone <org>/<repo>"
+        return 1
+    fi
+
+    base_dir=~/workspace/github.com
+    org=$(echo "$1" | cut -d/ -f1)
+    repo=$(echo "$1" | cut -d/ -f2)
+
+    target_dir="$base_dir/$org"
+
+    mkdir -p "$target_dir" || return 1
+    cd "$target_dir" || return 1
+
+    git clone "git@github.com:$org/$repo.git" || return 1
+    cd "$repo" || return 1
+}
+
+gh-open() {
+  base_dir=~/workspace/github.com
+
+  # Get current dir relative to base
+  rel_path="${PWD#$base_dir/}"
+
+  org=$(echo "$rel_path" | cut -d/ -f1)
+  repo=$(echo "$rel_path" | cut -d/ -f2)
+
+  if [ -z "$org" ]; then
+    echo "Not inside a GitHub org/repo directory."
+    return 1
+  fi
+
+  if [ -z "$repo" ] || [ ! -d "$base_dir/$org/$repo/.git" ]; then
+    # Open org page
+    open "https://github.com/$org"
+  else
+    # Open repo page
+    open "https://github.com/$org/$repo"
+  fi
+}
+
+workf() {
+  cd "$WORK" && clear
+
+  repo_list=$( 
+    find "$WORK/github.com" -mindepth 2 -maxdepth 2 -type d 2>/dev/null
+    find "$WORK/no-remote" -mindepth 1 -maxdepth 1 -type d 2>/dev/null
+  )
+
+  repo=$(echo "$repo_list" | sed "s|^$WORK/||" | sort | fzf)
+
+  [ -n "$repo" ] && cd "$WORK/$repo"
+}
+
+# gh-add-upstream: A bash function to easily add a GitHub repository as an 'upstream' remote.
+# This function should be sourced from your shell configuration file (e.g., ~/.zshrc or ~/.bashrc).
+#
+# Usage: gh-add-upstream <github-org>
+# Example: gh-add-upstream octocat
+#
+# It automatically detects the current repository's name from your local Git directory.
+
+gh-add-upstream() {
+  local org_name="$1"
+  local repo_name
+
+  # --- Argument Validation ---
+  if [ -z "$org_name" ]; then
+    echo "Usage: gh-add-upstream <github-org>" >&2
+    echo "  Example: gh-add-upstream octocat" >&2
+    return 1
+  fi
+
+  # --- Environment Checks ---
+  # Check if the current directory is a Git repository
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Error: Not a Git repository." >&2
+    echo "Please navigate to your local Git repository and try again." >&2
+    return 1
+  fi
+
+  # Get the current repository name from the Git working tree
+  repo_name=$(basename "$(git rev-parse --show-toplevel)")
+  if [ -z "$repo_name" ]; then
+    echo "Error: Could not determine repository name from current directory." >&2
+    return 1
+  fi
+
+  local repo_slug="${org_name}/${repo_name}"
+  local repo_url="https://github.com/${repo_slug}.git"
+
+  # --- Remote Configuration Logic ---
+  # Check if an 'upstream' remote already exists
+  if git remote -v | grep -q "^upstream" >/dev/null; then
+    echo "Warning: 'upstream' remote already exists ($(git remote get-url upstream 2>/dev/null))." >&2
+    read -p "Do you want to overwrite it with $repo_url? (y/N): " -n 1 -r REPLY_OVERWRITE
+    echo # Newline after prompt
+    if [[ ! "$REPLY_OVERWRITE" =~ ^[Yy]$ ]]; then
+      echo "Operation cancelled. 'upstream' remote not changed." >&2
+      return 0
+    fi
+    echo "Removing existing 'upstream' remote..." >&2
+    git remote remove upstream || { echo "Error: Failed to remove existing 'upstream' remote." >&2; return 1; }
+  fi
+
+  # --- Add the New Upstream Remote ---
+  echo "Adding 'upstream' remote: $repo_url"
+  git remote add upstream "$repo_url"
+  if [ $? -eq 0 ]; then
+    echo "Successfully added 'upstream' remote for ${repo_slug}."
+    echo "You can now sync with 'git fetch upstream'."
+  else
+    echo "Error: Failed to add 'upstream' remote for ${repo_slug}." >&2
+    return 1
+  fi
+}
+
+git-fswitch() {
+  local branch
+  branch=$(git branch --all --format="%(refname:short)" | fzf --height 40% --layout=reverse \
+    --preview 'git log --oneline --graph --color=always --pretty="format:%C(auto)%h %s %C(green)(%cr)" {} | head -n 10')
+
+  if [[ -n "$branch" ]]; then
+    git switch "$branch"
+  fi
+}
+export -f git-fswitch
