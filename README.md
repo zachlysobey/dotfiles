@@ -11,7 +11,9 @@ I use homebrew to install some stuff.
 #### a sample of stuff I install with brew:
 
 -   `brew install nvm`
+    - *maybe not best with brew anymore*
 -   `brew install yarn`
+    - probably can avoid til if/when needed
 -   `brew install tree`
 -   `brew install thefuck`
 
