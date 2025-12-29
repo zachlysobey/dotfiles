@@ -2,6 +2,24 @@
 
 ## Some random notes
 
+### iTerm2 Terminal setup
+
+I use iTerm2 as my terminal of choice, and version control its config here.
+
+Notable configurations:
+
+* **Natural Text Editing**
+    * `⌥← / ⌥→` → move by word
+    * `⌘← / ⌘→` → beginning / end of line
+
+Configuration Instructions:
+
+1. Download and install [iTerm2](https://iterm2.com/)
+1. Open **iTerm2 → Settings → General → Settings** :
+1. enable  `Load settings from a custom folder or URL` and set it to `$WORK/github.com/zachlysobey/dotfiles/iterm2`
+1. turn on **Save changes** → **Automatically**
+1. Click **Save Now**, then quit and reopen iTerm2.
+
 ### Homebrew
 
 I use homebrew to install some stuff.
