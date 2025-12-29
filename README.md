@@ -12,8 +12,6 @@ I use homebrew to install some stuff.
 
 -   `brew install nvm`
     - *maybe not best with brew anymore*
--   `brew install yarn`
-    - probably can avoid til if/when needed
 -   `brew install tree`
 -   `brew install thefuck`
 
