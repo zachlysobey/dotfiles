@@ -20,8 +20,10 @@ I use homebrew to install some stuff.
 Examples:
 
 ```sh
-ln -s /Users/zachlysobey/work/dotfiles/.npmrc ~/.npmrc
-ln -s /Users/zachlysobey/workspace/dotfiles/.gitconfig .gitconfig
+# from this repo
+DOTFILES=$(pwd)
+ln -s $DOTFILES/.npmrc ~/.npmrc
+ln -s $DOTFILES/.gitconfig ~/.gitconfig
 ```
 
 ### `oh-my-zsh`
