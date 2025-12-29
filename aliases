@@ -2,9 +2,9 @@
 alias gg="clear; pwd; git status"
 alias ggg="git diff --cached"
 
-# VSCode
-alias c="code"
-alias c.="code ."
+# Cursor
+alias c="cursor"
+alias c.="cursor ."
 
 # K8s
 alias k=kubectl
