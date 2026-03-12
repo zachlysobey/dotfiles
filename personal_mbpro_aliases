@@ -1,2 +1,8 @@
 echo "work   -> $WORK"
 alias work="cd $WORK"
+
+alias z-megarepo="cd $WORK/github.com/zachlysobey/z-megarepo && gg"
+alias zz="z-megarepo"
+alias zzz="z-megarepo && claude"
+
+alias dotfiles="cd $WORK/github.com/zachlysobey/dotfiles && gg"
