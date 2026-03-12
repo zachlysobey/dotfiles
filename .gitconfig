@@ -27,8 +27,9 @@ recent = for-each-ref --sort=-committerdate refs/ --format='%(HEAD) %(color:yell
 alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 
 [pager]
-	log = false
-	diff = false
+	log = true
+	diff = true
+	branch = true
 [color]
 	ui = true
 [pull]
@@ -37,3 +38,7 @@ alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =
 	verbose = true
 [rebase]
 	updateRefs = true
+[core]
+	pager = less -FRX
+[init]
+	defaultBranch = master
