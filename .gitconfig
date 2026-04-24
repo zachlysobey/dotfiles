@@ -5,6 +5,7 @@ email = zach@lysobey.com
 [alias]
 l = log --format="%C(auto) %h %s" --reverse
 lg = log --pretty=oneline -n 20 --graph --abbrev-commit
+lgx = "!git log -n 20 --abbrev-commit --date=relative --color=always --format=\"%C(auto)%D %C(magenta)(%ad)%n%C(reset)- %C(yellow)%h%C(reset) %s\" \"$@\" | awk \"/^[[:space:]]*(\\033\\[[0-9;]*m)*\\([0-9].* ago\\)/ { next } { print }\""
 
 st = status -s
 d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -19,6 +20,7 @@ frod = !"git fetch && git rebase origin/development"
 mast = checkout master
 dev = checkout development
 co = checkout
+an = add --intent-to-add
 cane = commit --amend --no-edit
 c = commit
 undo = reset --soft head~
