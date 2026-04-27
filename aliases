@@ -8,3 +8,6 @@ alias c.="cursor ."
 
 # K8s
 alias k=kubectl
+
+# Tree
+alias treee="eza --tree --icons=always"
