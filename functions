@@ -126,3 +126,16 @@ git-fswitch() {
   fi
 }
 export -f git-fswitch
+
+lgx() {
+  git log -n 20 --abbrev-commit --date=relative \
+    --color=always \
+    --format='%C(auto)%D %C(magenta)(%ad)%n%C(reset)- %C(yellow)%h%C(reset) %s' "$@" |
+    awk '
+    # Logic: if a line starts with a space followed by a magenta (timestamp)
+    # and has no branch text before it, skip it.
+    # Note: \033\[[0-9;]*m is the regex for ANSI color codes.
+    /^[[:space:]]*(\033\[[0-9;]*m)*\([0-9].* ago\)/ { next }
+    { print }
+    '
+}
